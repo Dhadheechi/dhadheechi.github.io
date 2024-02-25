@@ -1,10 +1,10 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "dhadheechi.github.io",
     "section": "",
-    "text": "About this blog"
+    "text": "Solving MINST using fastai and Cross-Entropy loss function\n\n\n\n\n\n\nMNIST\n\n\nCross-Entropy\n\n\n\n\n\n\n\n\n\nFeb 25, 2024\n\n\nDhadheechi Ravva\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nJan 23, 2024\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/mnist-full/mnist_full-2.html",
@@ -23,8 +23,8 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "dhadheechi.github.io",
+    "title": "About",
     "section": "",
-    "text": "Solving MINST using fastai and Cross-Entropy loss function\n\n\n\n\n\n\nMNIST\n\n\nCross-Entropy\n\n\n\n\n\n\n\n\n\nFeb 25, 2024\n\n\nDhadheechi Ravva\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nJan 23, 2024\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
+    "text": "About this blog"
   }
 ]
