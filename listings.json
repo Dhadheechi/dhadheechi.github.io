@@ -5,5 +5,12 @@
       "/posts/mnist-full/mnist_full-2.html",
       "/posts/welcome/index.html"
     ]
+  },
+  {
+    "listing": "/archive.html",
+    "items": [
+      "/posts/mnist-full/mnist_full-2.html",
+      "/posts/welcome/index.html"
+    ]
   }
 ]
