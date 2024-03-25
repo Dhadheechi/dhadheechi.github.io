@@ -9,7 +9,7 @@
 <meta name="author" content="Dhadheechi Ravva">
 <meta name="dcterms.date" content="2024-02-25">
 
-<title>Dhadheechi Ravva - Solving MINST using fastai and Cross-Entropy loss function</title>
+<title>Solving MINST using fastai and Cross-Entropy loss function</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -59,49 +59,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
-  "copy-button": false,
-  "collapse-after": 3,
-  "panel-placement": "end",
-  "type": "overlay",
-  "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": false,
-  "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
-    "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
-  }
-}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="mnist_full-2_files/libs/clipboard/clipboard.min.js"></script>
+<script src="mnist_full-2_files/libs/quarto-html/quarto.js"></script>
+<script src="mnist_full-2_files/libs/quarto-html/popper.min.js"></script>
+<script src="mnist_full-2_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="mnist_full-2_files/libs/quarto-html/anchor.min.js"></script>
+<link href="mnist_full-2_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="mnist_full-2_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="mnist_full-2_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="mnist_full-2_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="mnist_full-2_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
@@ -136,89 +103,47 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="fullcontent">
 
-<div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">Dhadheechi Ravva</span>
-    </a>
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Solving MINST using fastai and Cross-Entropy loss function</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">MNIST</div>
+    <div class="quarto-category">Cross-Entropy</div>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="../../blog.html"> 
-<span class="menu-text">Blog</span></a>
-  </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/dhadheechi"> <i class="bi bi-github" role="img">
-</i> 
-<span class="menu-text"></span></a>
-  </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/dhadheechi10"> <i class="bi bi-twitter" role="img">
-</i> 
-<span class="menu-text"></span></a>
-  </li>  
-</ul>
-          </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
-</div>
-      </div> <!-- /container-fluid -->
-    </nav>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Dhadheechi Ravva </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">February 25, 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
 </header>
-<!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title">Solving MINST using fastai and Cross-Entropy loss function</h1>
-                                <div class="quarto-categories">
-                <div class="quarto-category">MNIST</div>
-                <div class="quarto-category">Cross-Entropy</div>
-              </div>
-                  </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta">
-
-      <div>
-      <div class="quarto-title-meta-heading">Author</div>
-      <div class="quarto-title-meta-contents">
-               <p>Dhadheechi Ravva </p>
-            </div>
-    </div>
-      
-      <div>
-      <div class="quarto-title-meta-heading">Published</div>
-      <div class="quarto-title-meta-contents">
-        <p class="date">February 25, 2024</p>
-      </div>
-    </div>
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
-<!-- sidebar -->
-<!-- margin-sidebar -->
-    
-<!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
-
-
-
 
 
 <p>In this article, I will try to solve the full MNIST challenge as part of the “Further research” section at the end of chapter 4 of the fastai book. This article was inspired by <a href="https://medium.com/@jackdriscoll_90855/fast-ai-chapter-4-full-mnist-challenge-8558b1e0564a">Jack Driscoll’s</a> implementation of MNIST using fastai and cross entropy loss. While none of the following code is new, I will try to explain cross entropy loss function and a similar one called binary cross entropy, how they’re both equivalent, and also why it is preferred over other loss functions such as mse_loss (mean squared error loss). We will also going through the code for the challenge, using both fastai’s learner and our own implementation of it. Anyone who has worked through chapter 4 of the fastai book should also be able to follow this. I will also cite a few extra resources which have helped me in writing this post. Let’s get started!</p>
@@ -300,7 +225,9 @@ Mounted at /content/gdrive</code></pre>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>valid_dl <span class="op">=</span> DataLoader(valid_dset, batch_size <span class="op">=</span> <span class="dv">256</span>)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>dls <span class="op">=</span> DataLoaders(dl, valid_dl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>##Introducing Cross entropy loss function</p>
+<p>In the above couple of cells, we do the following: Take only the path associated with training images, since we are just concerned with training the model for now. For each of those images, make a tuple in which we open the image, tensor-ify it(convert the 28x28 image into a bunch of numbers based on the greyscale value, because our model can only deal with numbers), and also put its label in the tuple. Stuff all those tuples inside a list and split it randomly into two lists, which represent our traininig and validation sets. But we are not done yet, as our image tensors are shpaped 28x28 instead of 784x1, and it turns out that we would want the latter shpae to help with matrix multiplications witht the weights tensor later in the training process. Also, operations in Pytorch require us to <em>cast</em> our integer types to float types. And the last change is that tyically when numbers are floats, they are expected to be between 0 and 1. So we do all the above three operations and create a new <code>dset</code> and <code>valid_dset</code>, ready to passed into the DataLoader class.</p>
+<section id="introducing-cross-entropy-loss-function" class="level2">
+<h2 class="anchored" data-anchor-id="introducing-cross-entropy-loss-function">Introducing Cross entropy loss function</h2>
 <p>Cross entropy is a loss function which can be used as a replacement for the mean squared error loss (mse loss) used in chapter 4 of the book. Here’s the expression for what is called the “binary cross-entropy loss function”(this is used when y is either 0 or 1).</p>
 <p><span class="math display">\[\begin{eqnarray}
   L = -\frac{1}{n} \sum_x \left[y \ln a + (1-y ) \ln (1-a) \right],\tag{1}
@@ -323,31 +250,31 @@ Mounted at /content/gdrive</code></pre>
 <p>For more information on this, I’d recommend <a href="https://sebastianraschka.com/faq/docs/pytorch-crossentropy.html">this article</a> by Sebastian Raschka, which also delves into the actual functions in pytorch used to implement these loss functions.</p>
 <p>Also, to understand more about why cross entropy is used as a replacement for MSE loss, I’d recommend this <a href="http://neuralnetworksanddeeplearning.com/chap3.html#the_cross-entropy_cost_function">intuitive explantion</a> from Michael Nielsen’s book. Note that you need to understand backpropagation to understand the above, and I’d recommend <a href="http://neuralnetworksanddeeplearning.com/chap2.html">chapter 2</a> from the same book for it.</p>
 <p>We implement what we have learned above using Pytorch’s torch.nn.functional.cross_entropy function. Note that we directly pass in the output predictions, without softmax’ing them, because the cross_entropy function does it for us. Also note that we don’t have to pass in one-hot encoded labels, instead we can directly pass in the actual labels themselves, i.e., the numbers. This is because in pytorch, <span class="math inline">\(L\)</span> is not actually calculated as per equation <span class="math inline">\((1)\)</span>, but more like equation <span class="math inline">\((3)\)</span>. <a href="https://stackoverflow.com/questions/62456558/is-one-hot-encoding-required-for-using-pytorchs-cross-entropy-loss-function#:~:text=CrossEntropyLoss%20expects%20integer%20labels.,class%20as%20the%20final%20label.">Source</a></p>
-<div id="cell-14" class="cell">
+<div id="cell-15" class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> mnist_loss(preds, targets):</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  loss <span class="op">=</span> torch.nn.functional.cross_entropy(preds, targets)</span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> loss</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now we create a simple neural network:</p>
-<div id="cell-16" class="cell">
+<div id="cell-17" class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>simple_net <span class="op">=</span> nn.Sequential(</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    nn.Linear(<span class="dv">28</span><span class="op">*</span><span class="dv">28</span>,<span class="dv">30</span>),</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    nn.ReLU(),</span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    nn.Linear(<span class="dv">30</span>,<span class="dv">10</span>)</span>
 <span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>We now create a function to calculate the accuracy of a mini-batch. Here we hace to softmax the outputs, unlike in the mnist_loss function where the cross_entropy function did it for us. torch.argmax retrives the index of a tensor with the highest value, which is going to be the value our model predicts.</p>
-<div id="cell-18" class="cell">
+<p>We now create a function to calculate the accuracy of a mini-batch. Here we have to softmax the outputs, unlike in the mnist_loss function where the cross_entropy function did it for us. torch.argmax retrives the index of a tensor with the highest value, which is going to be the value our model predicts.</p>
+<div id="cell-19" class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> batch_accuracy(xb, yb):</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  preds <span class="op">=</span> F.softmax(xb, dim<span class="op">=</span><span class="dv">1</span>) <span class="co"># dimension 0(rows) contains number of xs in xb(mini-batch), wheareas dimension 1 contains the actual values in each x</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  corrects <span class="op">=</span> torch.argmax(preds, dim<span class="op">=</span><span class="dv">1</span>) <span class="op">==</span> yb</span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> corrects.<span class="bu">float</span>().mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-19" class="cell">
+<div id="cell-20" class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>learn <span class="op">=</span> Learner(dls, simple_net, opt_func<span class="op">=</span>SGD, loss_func<span class="op">=</span>mnist_loss, metrics<span class="op">=</span>batch_accuracy)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-20" class="cell" data-outputid="a74b3e8e-7a37-4224-aff5-a155cdc89c44">
+<div id="cell-21" class="cell" data-outputid="a74b3e8e-7a37-4224-aff5-a155cdc89c44">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>learn.fit(<span class="dv">20</span>, lr<span class="op">=</span><span class="fl">1.</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>/usr/local/lib/python3.10/dist-packages/fastai/torch_core.py:263: UserWarning: 'has_mps' is deprecated, please use 'torch.backends.mps.is_built()'
@@ -530,10 +457,10 @@ Mounted at /content/gdrive</code></pre>
 </div>
 </div>
 <p>93.2% accuracy in the first run! While we could do much better using better architectures like CNNs etc, I am gonna stop here as this article was intented to be more of an explainer of the cross-entropy function, and how it can be applied to a practical dataset such as MNIST. Thanks for reading!</p>
+</section>
 
-
-
-</main> <!-- /main -->
+</main>
+<!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -920,8 +847,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>
-<script src="https://utteranc.es/client.js" repo="Dhadheechi/blog_comments" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
 </script>
 </div> <!-- /content -->
 
