@@ -10,6 +10,7 @@ buildFuture: false
 buildExpired: false
 
 minifyOutput: true
+googleAnalytics: G-MEASUREMENT_ID
 
 params:
   env: production
