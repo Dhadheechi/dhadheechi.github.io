@@ -1,6 +1,6 @@
 ---
 date: '2025-07-26T11:37:34+05:30'
-draft: false 
+draft: true 
 title: 'Where are the curios people?'
 ---
 Literally. Where are the people who pursue things just for fun? Ever since mid-June, I've started seeing my fellow classmates grinding DSA non-stop. Purpose? To crack the Software Engineering OA's and interviews. Even in my department, AI, I've seen people interested in AI take a right turn and start leetcode/cp for the sake of internships. A few of them even admit that DSA is quite boring, but they have no other choice because that's all they ask during the interviews. I myself didn't do any DSA this summer, and yet I'm giving all these Online Assessments that I have zero interest in. I have a google OA today at 12pm, and, as of now at 10:20 AM, I haven't solved a single leetcode problem. I spent all my holidays playing tennis in the morning, and studying whatever interested me for the rest of the day (LLMs in May, Deep RL in June, Deepseek Architectures, Computer vision, and Diffusion models in July). So far I've managed to stay away from the crowd and follow my own thing. But now that I'm in my campus surrounded by people everywhere who do the DSA stuff (including my AI classmates), I wonder if I'm a bit too alone.
